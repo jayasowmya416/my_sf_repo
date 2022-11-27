@@ -10,6 +10,7 @@ public class CreateAccount {
     a.Phone=Phone;
     a.Fax=Fax;
     a.Industry=Industry;
+    <!----- insert --->
         Insert a;
     }
 }
