@@ -1,0 +1,20 @@
+<template>
+  <!---  <template if:true={accountDataReceived.data}>
+        <template for:each={accountDataReceived.data} for:item="acc">
+            <p key={acc.Id}>Name : {acc.Name} ====> Phone:{acc.Phone} ====>Rating:{acc.Rating} ====>Industry:{acc.Industry}</p>
+        </template>
+        <template if:true={accountDataReceived.error}>
+            Tha data can't be retrieved .Please refresh this screen again
+        </template>
+    </template> -->
+    
+    <template if:true={accounts}>
+        <template for:each={accounts} for:item="acc">
+            <p key={acc.Id}>Name : {acc.Name} ====> Phone:{acc.Phone} ====>Rating:{acc.Rating} ====>Industry:{acc.Industry}</p>
+        </template>
+        <template if:true={errorHappened}>
+            Tha data can't be retrieved .Please refresh this screen again
+            Error:{errorHappened}
+        </template>
+    </template> 
+</template>

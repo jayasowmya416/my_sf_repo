@@ -1,0 +1,16 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Data Example Table" icon-name="standard:Account">
+        <template if:true={contact.data} >
+            <lightning-datatable 
+            key-field="Id"
+            data = {contact.data} 
+            columns = {col} >
+            </lightning-datatable>
+        
+        <template if:true={contact.error}>
+            <!--Error program-->
+        </template> 
+    </template>
+    </lightning-card>
+</template>

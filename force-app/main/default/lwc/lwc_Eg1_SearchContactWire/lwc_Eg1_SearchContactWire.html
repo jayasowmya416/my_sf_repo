@@ -1,0 +1,31 @@
+<template>
+    <!--using the result from wire property-->
+    <lightning-card title="Search Contact from SSC using wire passing Params">
+        <lightning-input type="search " label="Enter Data to Search:" onchange={searchMe}>
+
+        </lightning-input>
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item="contact">
+                <p key={contact.id}> {contact.Name}</p>
+            </template>
+        </template>
+        <template if:true={contacts.error}>
+            error:{contacts.error}
+        </template>
+    </lightning-card>
+    
+    <!--Using the result from Wire Function-->
+    <lightning-card title="Search Contact from SSC using wire passing Params">
+        <lightning-input type="search " label="Enter Data to Search:" onchange={searchMe}>
+
+        </lightning-input>
+        
+            <template for:each={reccc} for:item="contact">
+                <p key={contact.id}> {contact.Name}</p>
+            </template>
+        error:{errrr}
+        
+    </lightning-card>
+
+
+</template>

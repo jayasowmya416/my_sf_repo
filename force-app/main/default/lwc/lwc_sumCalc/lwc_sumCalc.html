@@ -1,0 +1,31 @@
+<template>
+    <div class="box">
+   <lightning-card class="boxA" title="Grater of three numbers">
+    <lightning-input type="number" label="Number1" name="aval" onchange={callme}>
+    </lightning-input>
+
+    <lightning-input type="number" label="Number2" name="bval" onchange={callme}>
+    </lightning-input>
+
+    <lightning-input type="number" label="Number3" name="cval" onchange={callme}>
+    </lightning-input>
+
+    <lightning-button label="Calulate" onclick={addme}>
+    </lightning-button>
+   </lightning-card>
+   
+<lightning-card class="boxB" title="Sum of n numbers">
+    <lightning-input type="number" label="Enter the Number" name="sumval"
+    onchange={callme}>
+</lightning-input>
+    <lightning-button label="CalcSumOfN" onclick={calc}>
+
+    </lightning-button>
+
+</lightning-card>
+
+<lightning-card class="boxC">
+    Result :  {result}
+</lightning-card>
+</div>
+</template>

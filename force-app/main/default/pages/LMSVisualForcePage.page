@@ -1,0 +1,50 @@
+<apex:page>
+ <div>
+        <p>Enter Your Message Here:</p>
+        <input type="text" id="theMessage" />
+        <button onclick="publishMC()"> Publish Msg</button>
+        <br/><br/>
+            <button onclick="subscribeMC()">Subscribe</button>
+            <button onclick="unsubscribeMC()">Unsubscribe</button>
+        <br/>
+        <br/>
+        <p>Received message:</p>
+        <label id="MCMessageText"/>
+    </div>
+  
+    <script>
+      
+        // step 1:Call the MessageChannel you created in a variable
+        var SAMPLEMC = "{!$MessageChannel.SowmyaMsgChannel__c}";
+        var subscriptionToMC;
+            //step 2:construct the message
+        function publishMC() {
+            const message = {
+                messageToSend: document.getElementById('theMessage').value,
+                sourceSystem: "From VisualForce Page"
+            };
+            //step 3:Publish the message
+            sforce.one.publish(SAMPLEMC, message);
+        }
+      
+        // Display message in the textarea field
+        function displayMessage(message) {
+            var textLabel = document.querySelector("#MCMessageText");
+            textLabel.innerHTML = message ? JSON.stringify(message, null, '\t') : 'no message payload';
+        }
+
+        function subscribeMC() {
+            if (!subscriptionToMC) {
+                subscriptionToMC = sforce.one.subscribe(SAMPLEMC, displayMessage);
+            }
+        }
+
+        function unsubscribeMC() {
+            if (subscriptionToMC) {
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC = null;
+            }
+        }
+        </script>
+
+</apex:page>

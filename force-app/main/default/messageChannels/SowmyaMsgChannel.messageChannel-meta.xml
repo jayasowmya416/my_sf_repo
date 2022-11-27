@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>SowmyaMessageChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>This is a Lightning Message Channel which sends information from VF toLWC and Vice Versa.</description>
+    <lightningMessageFields>
+        <fieldName>MessageToSend</fieldName>
+        <description>message to send</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>sourceSystem</fieldName>
+        <description>My Source?</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
